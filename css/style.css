@@ -24,10 +24,10 @@ p.main {
 .sidebar {
     position: absolute;
     left: 0px;
-    width: 500px;
+    width: 425px;
     top: 0;
     bottom: 0; 
-    padding: 10px;
+    padding: 15px;
     font-size: 16px;
     overflow-y: auto;
     overflow-x: hidden; 
@@ -41,7 +41,7 @@ p.main {
 
 
 #construction { 
-  height: 160px;
+  height: 170px;
   width: 400px; 
   flex: 1 0 10px; 
   display: flex;
@@ -51,6 +51,7 @@ p.main {
   right: 5px; 
   margin:-15 -15px;
   display: inline-flex;
+  font-size: medium;
 }
 
 .legendTitle { 
@@ -106,6 +107,17 @@ p.main {
 .modal-body { 
   font-size : 16px; 
   font-family: colfax, helvetica, arial, sans-serif;
+}
+
+
+#CON19 {
+  position: relative;
+  left: 5px;
+}
+
+#MapOn {
+  position: relative;
+  left: 5px;
 }
 
 
@@ -294,7 +306,7 @@ p.main {
   #BenFrank { 
     position: relative; 
     bottom: 50px; 
-    right: 1px; 
+    right: 7px; 
   }
 
    #CON19 {
