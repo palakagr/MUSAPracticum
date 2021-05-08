@@ -42,7 +42,7 @@ p.main {
 
 #construction { 
   height: 145px;
-  width: 400px; 
+  width: 350px; 
   flex: 1 0 10px; 
   display: flex;
   flex-direction: column;
