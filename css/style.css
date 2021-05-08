@@ -1,7 +1,7 @@
 body {
     padding: 0;
     overflow: hidden;
-    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    font-family: colfax, helvetica, arial, sans-serif;
 }
 
 p.main {
@@ -105,7 +105,7 @@ p.main {
 
 .modal-body { 
   font-size : 16px; 
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+  font-family: colfax, helvetica, arial, sans-serif;
 }
 
 
@@ -139,7 +139,7 @@ p.main {
 .btn-toolbar { 
   padding-top: 13px; 
   font-size: 15px;
-  font-family: Helvetica Neue,Helvetica,Arial,sans-serif; 
+  font-family: colfax, helvetica, arial, sans-serif; 
 }
 
 .custom-popup, .leaflet-popup-tip {
