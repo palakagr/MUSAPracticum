@@ -41,7 +41,7 @@ p.main {
 
 
 #construction { 
-  height: 100px;
+  height: 10px;
   width: 400px; 
   flex: 1 0 10px; 
   display: flex;
