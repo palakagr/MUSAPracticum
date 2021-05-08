@@ -33,7 +33,10 @@ p.main {
     overflow-x: hidden; 
 }
 
-
+.allpoly {
+    left: relative;
+    right: 20px;
+}
 
 
 
