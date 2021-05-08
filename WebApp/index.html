@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <!-- CSS Imports -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.css"></link> 
+  </head>
+  <body>
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar-wrapper">
+      <div id="intro">
+        <div class = "title">
+          <div class = "left"> 
+             <img src = "https://raw.githubusercontent.com/kylepmccarthy/675Final/main/WebApp/Images/tree.jpg" style="width:20%;height:18%x;">
+             <div class = "titletext"><h1>Canopy View</h1></div>
+          </div> 
+        </div> 
+        <div class="container">
+          <div class = "subtitle1" id = "first">View Canopy Statistics</div>
+          <div class="row" id = "b">
+              <div class="btn-group" >
+                <button type="button" class="btn btn-default dropdown-toggle first" data-toggle="dropdown" id = "firstDrop">
+                  View Tree Canopy Statistics by Neighborhood <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu scrollable-menu" role="menu" id = "firstDrop1">
+                  <li id = "cov08"><a href="#">Total Tree Coverage 2008 by Neighborhood</a></li>
+                  <li id = "cov18"><a href="#">Total Tree Coverage 2018 by Neighborhood</a></li>
+                  <li id = "pctCov08"><a href="#">Percent Tree Coverage 2008 by Neighborhood</a></li>
+                  <li id = "pctCove18"><a href="#">Percent Tree Coverage 2018 by Neighborhood</a></li>
+                  <li id = "lostTrees"><a href="#">Tree Canopy Lost 2008-2018 by Neighborhood</a></li>
+                  <li id = "gainedTrees"><a href="#">Tree Canopy Gained 2008-2018 by Neighborhood</a></li>
+                  <li id = "NetChange"><a href="#">Tree Canopy Net Change 2008-2018 by Neighborhood</a></li>
+                  <li id = "pctLoss"><a href="#">Percent Tree Canopy Loss by Neighborhood</a></li>
+                  <li id = "pctGain"><a href="#">Percent Tree Canopy Gain by Neighborhood</a></li>
+                  <li id = "pctChange"><a href="#">Percent Change by Neighborhood</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="row" >
+              <div class="btn-group" id = "firstD">
+                <button type="button" class="btn btn-default dropdown-toggle pull-left"  href="#left-panel" data-toggle="dropdown" id = "secondDrop">
+                  View Tree Canopy Statistics by Grid Cell <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu scrollable-menu" role="menu" id = "secondDrop1">
+                  <li id = "cov08F"><a href="#">Total Tree Coverage 2008 by Grid Cell</a></li>
+                  <li id = "cov18F"><a href="#">Total Tree Coverage 2018 by Grid Cell</a></li>
+                  <li id = "pctCov08F"><a href="#">Percent Tree Coverage 2008 by Grid Cell</a></li>
+                  <li id = "pctCove18F"><a href="#">Percent Tree Coverage 2018 by Grid Cell</a></li>
+                  <li id = "lostTreesF"><a href="#">Tree Canopy Lost 2008-2018 by Grid Cell</a></li>
+                  <li id = "gainedTreesF"><a href="#">Tree Canopy Gained 2008-2018 by Grid Cell</a></li>
+                  <li id = "NetChangeF"><a href="#">Tree Canopy Net Change 2008-2018 by Grid Cell</a></li>
+                  <li id = "pctLossF"><a href="#">Percent Tree Canopy Loss by Grid Cell</a></li>
+                  <li id = "pctGainF"><a href="#">Percent Tree Canopy Gain by Grid Cell</a></li>
+                  <li id = "pctChangeF"><a href="#">Percent Change by Grid Cell</a></li>
+                </ul>
+              </div>
+            </div>
+            <div> </div> 
+            <div class = "break"> ________________________________________</div>
+            <div> 
+              </div>
+            <div class = "subtitle2"> View Construction Permits </div>
+            <div class = "allPoly"> 
+              <ul style="list-style: none;" id = "construction">
+                <li> <h5> <input id= "ADDCheck" type= "checkbox"/>   Addition Permits </h5></li>
+                <li>  <h5> <input id= "ALTCheck" type= "checkbox"/>   Alteration Permits* </h5></li>
+                <li>  <h5> <input id= "DEMCheck" type= "checkbox"/>    Demolition Permits</h5></li>
+                <li>  <h5> <input id= "ELCheck" type= "checkbox"/>    Electric Permits* </h5></li>
+                <li><h5> <input id= "MCheck" type= "checkbox"/>    Mechanical Permits</h5></li>
+                <li> <h5> <input id= "NCCheck" type= "checkbox"/>    New Construction Permits</h5></li>
+                <li><h5> <input id= "PCheck" type= "checkbox"/>    Plumbing Permits*</h5></li> 
+                <li><div class = "warning"><h5> * Processing Intensive<br> Dataset</h5></div></li> 
+              </ul>
+            </div>
+          </div>
+          <div class="btn-toolbar" id = "years"> 
+            <button type="button" id = "CON0818" class="btn btn-dark active" Active>2008 - 2018 </button>
+           <button type="button" id = "CON19" class="btn btn-dark">2019 - April 2021</button>
+         </div> 
+        </div>
+        <div class = "break1"> ________________________________________
+        </div>
+        <div class="container1">
+          <div class = "subtitle3">View Grid Cells with Substantial Tree Canopy Risk </div>
+          <div class="row">
+              <div class="btn-group">
+                <button type="button" class="btn btn-default dropdown-toggle pull-left" data-toggle="dropdown" id = "thirdDrop">
+                  View Substanital Tree Tree Canopy Risk Scenarios <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu scrollable-menu" role="menu" id = "thirdDrop1">
+                  <li id = "S3"><a href="#">Current Construction Scenario</li></a> 
+                  <li id = "S1"><a href="#">50% Decrease in Completed Construction Permits</a></li>
+                  <li id = "S2"><a href="#">25% Decrease in Completed Construction Permits</a></li>
+                  <li id = "S4"><a href="#">25% Increase in Completed Construction Permits</a></li>
+                  <li id = "S5"><a href="#">50% Increase in Completed Construction Permits</a></li>
+                </ul>
+              </div>
+            </div>
+           <div class="btn-toolbar" id = "clear"> 
+            <button type="button" id = "clearMap" class="btn btn-dark">Toggle Statistics Off</button>
+            <button type="button" id = "MapOn" class="btn btn-dark">Toggle Statistics On</button>
+         </div>
+            <div class="chart-container">
+              <canvas id="myChart" height="68" width="96"></canvas>
+              <p id = "BenFrank"> <img src = "https://raw.githubusercontent.com/kylepmccarthy/675Final/main/WebApp/Images/BenFranklin.jpg" style="width:98%;height:120%;"> </p>
+              
+              
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    <!-- Map -->
+    <div id="map" class="map"></div>
+    <!-- Legend -->
+    
+</div>
+<div class = "legendTitle" id = "legends" style="display: none;" > Neighborhood/Grid Statistics </div>
+<div class = "legendTitle1" id = "legends1" style="display: none;" > Construction Permits </div>
+<ul class="legend" style="display: none;" id = "AreaCov">
+  <li><span class="Top"></span> Very High Tree Canopy Area</li>
+  <li><span class="Two"></span> High Tree Canopy Area</li>
+  <li><span class="Three"></span> Moderate Tree Canopy Area</li>
+  <li><span class="Four" ></span> Low Tree Canopy Area</li>
+  <li><span class="Bottom" ></span> Very Low Tree Canopy Area</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "pctLegend">
+  <li><span class="Top"></span> Very High Percent Coverage</li>
+  <li><span class="Two"></span> High Percent Coverage</li>
+  <li><span class="Three"></span> Moderate Percent Coverage</li>
+  <li><span class="Four" ></span> Low Percent Coverage</li>
+  <li><span class="Bottom" ></span> Very Low Percent Coverage</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "AreaLoss">
+  <li><span class="Top"></span> Very High Area Lost</li>
+  <li><span class="Two"></span> High Area Lost</li>
+  <li><span class="Three"></span> Moderate Area Lost</li>
+  <li><span class="Four" ></span> Low Area Lost</li>
+  <li><span class="Bottom" ></span> Very Low Area Lost</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "AreaGain">
+  <li><span class="Top"></span> Very High Area Gained</li>
+  <li><span class="Two"></span> High Area Gained</li>
+  <li><span class="Three"></span> Moderate Area Gained</li>
+  <li><span class="Four" ></span> Low Area Gained</li>
+  <li><span class="Bottom" ></span> Very Low Area Gained</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "NetChangeL">
+  <li><span class="Top"></span> Tree Area Gain!</li>
+  <li><span class="Two"></span> Low Area Loss</li>
+  <li><span class="Three"></span> Moderate Area Loss</li>
+  <li><span class="Four" ></span> High Area Loss</li>
+  <li><span class="Bottom" ></span> Substantial Area Loss</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "pctLossL">
+  <li><span class="Top"></span> Very High Percent Loss</li>
+  <li><span class="Two"></span> High Percent Loss</li>
+  <li><span class="Three"></span> Moderate Percent Loss</li>
+  <li><span class="Four" ></span> Low Percent Loss</li>
+  <li><span class="Bottom" ></span> Very Low Percent Loss</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "pctGainL">
+  <li><span class="Top"></span> Very High Percent Gain</li>
+  <li><span class="Two"></span> High Percent Gain</li>
+  <li><span class="Three"></span> Moderate Percent Gain</li>
+  <li><span class="Four" ></span> Low Percent Gain</li>
+  <li><span class="Bottom" ></span>Very Low Percent Gain </li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "pctGainL">
+  <li><span class="Top"></span> Very Low Percent Gain</li>
+  <li><span class="Two"></span> Low Percent Gain</li>
+  <li><span class="Three"></span> Moderate Percent Gain</li>
+  <li><span class="Four" ></span> High Percent Gain</li>
+  <li><span class="Bottom" ></span> Very High Percent Gain</li>
+</ul>
+
+
+<ul class="legend" style="display: none;" id = "pctChangeL">
+  <li><span class="Top"></span> Overall Percent Gain!</li>
+  <li><span class="Two"></span> Low Percent Loss</li>
+  <li><span class="Three"></span> Moderate Percent Loss</li>
+  <li><span class="Four" ></span> High Percent Loss</li>
+  <li><span class="Bottom" ></span> Very High Percent Loss</li>
+</ul>
+
+<ul class="legend" style="display: none;" id = "sce">
+  <li><span class="Top"></span> Very High Percent Loss Risk</li>
+  <li><span class="Two"></span> High Percent Loss Risk</li>
+  <li><span class="Three"></span> Moderate Percent Gain Risk</li>
+  <li><span class="Four" ></span> Low Percent Loss Risk</li>
+  <li><span class="Bottom" ></span> Very Low Percent Risk</li>
+</ul>
+
+
+<ul class="legendC" style="display: none;" id = "ConL">
+  <li><span class="Top"></span> Addition Permits </li>
+  <li><span class="Two"></span> Alteration Permits</li>
+  <li><span class="Three"></span> Demolition Permits</li>
+  <li><span class="Four" ></span> Electric Permits</li>
+  <li><span class="Five" ></span> Mechanical Permits</li>
+  <li><span class="Six" ></span> New Construction Permits</li>
+  <li><span class="Bottom" ></span> Plumbing Permits</li>
+</ul>
+
+
+<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#exampleModalLong" id = "myModal">
+  Launch User Guide
+</button>
+<a class="btn btn-warning" href="https://htmlpreview.github.io/?https://github.com/palakagr/tree-canopy-loss/blob/main/Tree_Canopy_Loss.html" role="button" id = "report" >View Report</a>
+<a class="btn btn-warning" href="https://phillytrees.azavea.com/" role="button" id = "azavea" target="_blank" rel="noopener noreferrer">View Canopy in More Detail</a>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title" id="exampleModalLongTitle">Welcome to Canopy View!</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p> This application was designed to help prioritize tree planting initatives in Philadelphia. The web application has 3 distinct features: 
+          <ol class = modalList> 
+            <li id = "a"> <b>  This application allows you to view the current state of the tree canopy in Philadelphia!</b> Users can view 10 distinct tree canopy statistics by 
+              clicking on our interactive dropdown menus. Users can view these statistics in either neighborhood or grid cell (150m x 150m) form. 
+              This feature allows the user to understand the current state of the tree canopy in a given area. Click on a neighborhood or grid cell to view all statistics for that location!
+            </li>
+            <li id = "a"> <b>  This application allows users to view where construction permits are located!</b> By overlaying completed construction permits with our tree canopy statistics/ tree canopy loss risk predictions,
+               users will notice that construction is very much related to tree canopy loss! Users can toggle the statistics or predictions on and off to view exactly where construction has occurred. Tree planters should 
+               prioritize streets with high construction rates located in high-risk tree canopy loss regions. Users can either view construction permits from 2008-2018 or 2019- April 2021. Note: The more construction permit 
+               categories selected, the slower the web application will be due to the large size of the construction data. 
+            </li> 
+            <li id = "a" > <b>  Most importantly, this application allows users to view areas that are at high risk for substantial tree canopy loss!</b> Each grid cell is assigned a "probability score", 
+              which is the probability that the given grid cell will experience substantial tree canopy loss in the future.  Substantial tree canopy loss is defined as a grid cell losing 25% of their tree canopy loss over a ten year period.
+              Click on the grid cell to view the probability score of a location! The results are based on a model predicting where tree loss will most likely occur based on attributes associated with regions with significant tree loss.  
+              Users can view the substantial tree canopy loss risk in differing construction scenarios. You will notice through our interactive bar graph that as construction permits increase, 
+              the risk of tree canopy also generally increases. 
+            </li>
+          </ol>
+          <p> Please view our report for more information regarding the model. <br> For best user experience, please view the web application on a computer. </p> 
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <!-- Javascript Imports -->
+    <script src="js/jquery-2.2.0.js"></script>
+    <script src="js/underscore.js"></script>
+    <script src="js/leaflet.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
