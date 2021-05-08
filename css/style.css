@@ -41,7 +41,7 @@ p.main {
 
 
 #construction { 
-  height: 130px;
+  height: 145px;
   width: 400px; 
   flex: 1 0 10px; 
   display: flex;
@@ -299,7 +299,7 @@ p.main {
 
    #CON19 {
        position: relative;
-       right: 100px;
+       right: 1000px;
 }
 
 
