@@ -42,13 +42,13 @@ p.main {
 
 #construction { 
   height: 145px;
-  width: 320px; 
+  width: 300px; 
   flex: 1 0 10px; 
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   position: relative; 
-  right: 18px; 
+  right: 5px; 
   margin:-30 -15px;
   display: inline-flex;
 }
