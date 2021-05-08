@@ -18,8 +18,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">    
-
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   </head>
   <body>
     <!-- Sidebar -->
@@ -34,7 +33,7 @@
         <div class="container">
           <div class = "subtitle1" id = "first">View Canopy Statistics</div>
           <div class="row" id = "b">
-              <div class="btn btn-default dropdown-toggle" >
+              <div class="dropdown" >
                 <button type="button" class="btn btn-default dropdown-toggle first" data-toggle="dropdown" id = "firstDrop">
                   View Tree Canopy Statistics by Neighborhood <span class="caret"></span>
                 </button>
@@ -53,7 +52,7 @@
               </div>
             </div>
             <div class="row" >
-              <div class="btn btn-default dropdown-toggle" id = "firstD">
+              <div class="dropdown" id = "firstD">
                 <button type="button" class="btn btn-default dropdown-toggle pull-left"  href="#left-panel" data-toggle="dropdown" id = "secondDrop">
                   View Tree Canopy Statistics by Grid Cell <span class="caret"></span>
                 </button>
@@ -78,14 +77,14 @@
             <div class = "subtitle2"> View Construction Permits </div>
             <div class = "allPoly"> 
               <ul style="list-style: none;" id = "construction">
-                <li> <h5> <input id= "ADDCheck" type= "checkbox"/> <a style ="font-size:14px">   Addition Permits </a> </h5></li>
-                <li>  <h5> <input id= "ALTCheck" type= "checkbox"/> <a style ="font-size:14px">  Alteration Permits* </a></h5></li>
-                <li>  <h5> <input id= "DEMCheck" type= "checkbox"/> <a style ="font-size:14px">   Demolition Permits</a></h5></li>
-                <li>  <h5> <input id= "ELCheck" type= "checkbox"/> <a style ="font-size:14px">   Electric Permits* </a></h5></li>
-                <li><h5> <input id= "MCheck" type= "checkbox"/> <a style ="font-size:14px">   Mechanical Permits</a></h5></li>
-                <li> <h5> <input id= "NCCheck" type= "checkbox"/> <a style ="font-size:14px">   New Construction Permits</a></h5></li>
-                <li><h5> <input id= "PCheck" type= "checkbox"/> <a style ="font-size:14px">   Plumbing Permits*</a></h5></li>  
-                <li><div class = "warning"><h5> <a style ="font-size:14px">* Processing Intensive<br> Dataset</a></h5></div></li>
+                <li> <h5> <input id= "ADDCheck" type= "checkbox"/> <a style ="font-size:15px">   Addition Permits </a> </h5></li>
+                <li>  <h5> <input id= "ALTCheck" type= "checkbox"/> <a style ="font-size:15px">  Alteration Permits* </a></h5></li>
+                <li>  <h5> <input id= "DEMCheck" type= "checkbox"/> <a style ="font-size:15px">   Demolition Permits</a></h5></li>
+                <li>  <h5> <input id= "ELCheck" type= "checkbox"/> <a style ="font-size:15px">   Electric Permits* </a></h5></li>
+                <li><h5> <input id= "MCheck" type= "checkbox"/> <a style ="font-size:15px">   Mechanical Permits</a></h5></li>
+                <li> <h5> <input id= "NCCheck" type= "checkbox"/> <a style ="font-size:15px">   New Construction Permits</a></h5></li>
+                <li><h5> <input id= "PCheck" type= "checkbox"/> <a style ="font-size:15px">   Plumbing Permits*</a></h5></li>  
+                <li><div class = "warning"><h5> <a style ="font-size:15px">* Processing Intensive<br> Dataset</a></h5></div></li>
               </ul>
             </div>
           </div>
@@ -99,7 +98,7 @@
         <div class="container1">
           <div class = "subtitle3">View Grid Cells with Substantial Tree Canopy Risk </div>
           <div class="row">
-              <div class="btn btn-default dropdown-toggle">
+              <div class="dropdown">
                 <button type="button" class="btn btn-default dropdown-toggle pull-left" data-toggle="dropdown" id = "thirdDrop">
                   View Substanital Tree Tree Canopy Risk Scenarios <span class="caret"></span>
                 </button>
@@ -117,7 +116,7 @@
             <button type="button" id = "MapOn" class="btn btn-dark">Toggle Statistics On</button>
          </div>
             <div class="chart-container">
-              <canvas id="myChart" height="68" width="60"></canvas>
+              <canvas id="myChart" height="68" width="96"></canvas>
               <p id = "BenFrank"> <img src = "https://raw.githubusercontent.com/kylepmccarthy/675Final/main/WebApp/Images/BenFranklin.jpg" style="width:98%;height:120%;"> </p>
               
               
@@ -280,7 +279,6 @@
     <script src="js/leaflet.js"></script>
     <script src="js/main.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    
 
   </body>
 </html>
