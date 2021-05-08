@@ -1,0 +1,333 @@
+body {
+    padding: 0;
+    overflow: hidden;
+    font-family: colfax, helvetica, arial, sans-serif;
+}
+
+p.main {
+  font-size: 24px;
+}
+
+.map {
+    position: absolute;
+    right: 0px;
+    left: 400px;
+    height: 100%;
+    top: 0;
+}
+
+.warning { 
+  display: flex;
+  text-align: center; 
+}
+
+.sidebar {
+    position: absolute;
+    left: 0px;
+    width: 425px;
+    top: 0;
+    bottom: 0; 
+    padding: 15px;
+    font-size: 16px;
+    overflow-y: auto;
+    overflow-x: hidden; 
+}
+
+
+
+
+
+#construction { 
+  height: 170px;
+  width: 400px; 
+  flex: 1 0 10px; 
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  position: relative; 
+  right: 18px; 
+  margin:-30 -15px;
+  display: inline-flex;
+}
+
+.legendTitle { 
+  font-size: large; 
+  font-weight: bold; 
+  position: absolute; 
+  bottom: 200px; 
+  right: 10px; 
+  width: 280px; 
+  height: 30px;
+  background-color: rgb(249, 249, 249); 
+  padding: 5px; 
+}
+
+.legendTitle1 { 
+  font-size: large; 
+  font-weight: bold; 
+  position: absolute; 
+  bottom: 450px; 
+  right: 10px; 
+  width: 280px; 
+  height: 30px;
+  background-color: rgb(249, 249, 249); 
+  padding: 5px; 
+}
+
+.break { 
+  font-weight : bold ;
+  position: relative; 
+  right: 4px; 
+  
+}
+
+.modalList{
+  counter-reset: item;
+}
+
+.modalList li { display: block }
+
+.modalList li:before {
+  content: counter(item) ". ";
+  counter-increment: item;
+  font-weight: bold;
+}
+
+.break1 { 
+  font-weight : bold ;
+  position: relative; 
+  left: 7px;
+  
+}
+
+.modal-body { 
+  font-size : 16px; 
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+
+
+.title { 
+  color : rgb(56, 90, 5); 
+  font-weight: bold;
+  font-size: 16px; 
+  position: relative; 
+  left: 13px; 
+}
+
+.custom-popup, .leaflet-popup-content-wrapper {
+  background:#2c3e50;
+  color:#fff;
+  font-size:12px;
+  line-height:10px;
+  border-radius: 10px;
+  }
+
+.custom-popup, .leaflet-popup-content-wrapper a {
+  color:rgba(255,255,255,0.1);
+  }
+
+.custom-popup, .leaflet-popup-tip-container {
+  width:30px;
+  height:15px;
+  }
+
+
+.btn-toolbar { 
+  padding-top: 13px; 
+}
+
+.custom-popup, .leaflet-popup-tip {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  }
+
+
+  .subtitle1 { 
+    font-size: 15px; 
+    font-weight: bold;
+    padding: 10px; 
+    position: relative; 
+    right: 14px; 
+  }
+
+  .subtitle2 { 
+    font-size: 15px; 
+    font-weight: bold;
+    padding: 5px; 
+    position: relative; 
+    right: 12px; 
+  }
+
+  .subtitle3 { 
+    font-size: 14.5px; 
+    font-weight: bold;
+    padding: 10px; 
+    position: relative; 
+    right: 7px; 
+  }
+
+  .link { 
+    font-size: 12px; 
+    padding: 20px; 
+  }
+
+
+  .active {
+    background-color: green !important;
+  }
+
+
+
+  #BenFrank { 
+    position: relative; 
+    padding-left: 9px;
+  }
+
+  #myChart { 
+    position: relative; 
+    top: 3px; 
+    right: 8px; 
+  }
+
+
+
+  .list-group-item { 
+    padding: 0px; 
+  }
+
+
+  .legend {
+     list-style: none; 
+  position: absolute; 
+  bottom: 30px; 
+  right: 30px; 
+  background-color: rgb(249, 249, 249);
+  border-color: black;
+  background-size: 300px 100px;
+  height: 140px; 
+  width: 50px; 
+  padding-left: 10px;
+  padding-bottom: 30px;
+  padding-top: 10px;
+  padding-right: 0px; 
+  width: 260px; }
+  
+
+  
+  .legend li { float: left; margin-right: 10px; }
+  .legend span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 5px; }
+  /* your colors */
+  .legend .Top { background-color: #252525; border-color: black; }
+  .legend .Two{ background-color: #636363; border-color: black;}
+  .legend .Three { background-color: #969696; border-color: black;}
+  .legend .Four { background-color: #cccccc; border-color: black;}
+  .legend .Bottom { background-color: #f7f7f7; border-color: black; }
+
+  .legendC {
+    list-style: none; 
+ position: absolute; 
+ bottom: 250px; 
+ right: 30px; 
+ background-color: rgb(249, 249, 249);
+ border-color: black;
+ background-size: 300px 100px;
+ height: 170px; 
+ width: 50px; 
+ padding-left: 10px;
+ padding-bottom: 30px;
+ padding-top: 10px;
+ padding-right: 0px; 
+ width: 260px; }
+ 
+
+ 
+ .legendC li { float: left; margin-right: 10px; }
+ .legendC span { border: 1px solid #ccc; float: left; width: 12px; height: 12px; margin: 5px; border-radius: 50%; ;  }
+ /* your colors */
+ .legendC .Top { background-color: #A48D28; border-color: black; }
+ .legendC .Two{ background-color: #FCE883; border-color: black;}
+ .legendC .Three { background-color: #9C51B6; border-color: black;}
+ .legendC .Four { background-color: #B9D9EB; border-color: black;}
+ .legendC .Five{ background-color: #D982B5; border-color: black; }
+ .legendC .Six{ background-color: #48845C; border-color: black; }
+ .legendC .Bottom{ background-color: #90EE90; border-color: black; }
+
+
+
+  #myModal { 
+    position:absolute; 
+    top: 10px; 
+    right: 420px; 
+    height: 30px; 
+    width: 170px; 
+    font-size: small; 
+    font-weight: bold; 
+  }
+
+  #report { 
+    position:absolute; 
+    top: 10px; 
+    right: 270px; 
+    height: 30px; 
+    width: 140px; 
+    font-size: small; 
+    font-weight: bold; 
+  }
+
+  #azavea{ 
+    position:absolute; 
+    top: 10px; 
+    right: 30px; 
+    height: 30px; 
+    width: 230px; 
+    font-size: small; 
+    font-weight: bold; 
+  }
+
+  #BenFrank { 
+    position: relative; 
+    bottom: 50px; 
+    right: 7px; 
+  }
+
+
+  #exampleModalLongTitle { 
+    font-weight: bold; 
+    font-size: large; 
+  }
+
+  #a { 
+    margin : 10px; 
+    padding: 10px;
+  } 
+
+  #years { 
+    padding: 0; 
+  }
+
+  #b{ 
+    padding-bottom: 4px; 
+  }
+
+
+#space { 
+  padding: 10px; 
+}
+
+  #thirdDrop { 
+    position: relative; 
+    left: 9px; 
+  }
+
+ .titletext{
+    display: inline-block;
+  }
+
+
+  
+  
+
+
+
