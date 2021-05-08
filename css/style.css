@@ -24,7 +24,7 @@ p.main {
 .sidebar {
     position: absolute;
     left: 0px;
-    width: 460px;
+    width: 480px;
     top: 0;
     bottom: 0; 
     padding: 15px;
@@ -41,8 +41,8 @@ p.main {
 
 
 #construction { 
-  height: 165px;
-  width: 300px; 
+  height: 175px;
+  width: 400px; 
   flex: 1 0 10px; 
   display: flex;
   flex-direction: column;
@@ -299,7 +299,7 @@ p.main {
 
    #CON19 {
        position: relative;
-       right: 30px;
+       left: 30px;
 }
 
 
