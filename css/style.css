@@ -41,7 +41,7 @@ p.main {
 
 
 #construction { 
-  height: 120px;
+  height: 10px;
   width: 400px; 
   flex: 1 0 10px; 
   display: flex;
@@ -138,6 +138,8 @@ p.main {
 
 .btn-toolbar { 
   padding-top: 13px; 
+  font-size: 15px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .custom-popup, .leaflet-popup-tip {
@@ -294,6 +296,13 @@ p.main {
     bottom: 50px; 
     right: 7px; 
   }
+
+   #CON19 {
+       position: relative;
+       right: 5px;
+}
+
+
 
 
   #exampleModalLongTitle { 
