@@ -3,15 +3,22 @@
   <head>
     <meta charset="utf-8">
     <!-- CSS Imports -->
-    <link src="css/reset.css" />
-    <link src="css/leaflet.css" />
-    <link src="css/style.css" />
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/leaflet.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.js"></script>
     <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    
   </head>
   <body>
     <!-- Sidebar -->
@@ -26,7 +33,7 @@
         <div class="container">
           <div class = "subtitle1" id = "first">View Canopy Statistics</div>
           <div class="row" id = "b">
-              <div class="btn-group" >
+              <div class="dropdown" >
                 <button type="button" class="btn btn-default dropdown-toggle first" data-toggle="dropdown" id = "firstDrop">
                   View Tree Canopy Statistics by Neighborhood <span class="caret"></span>
                 </button>
@@ -45,7 +52,7 @@
               </div>
             </div>
             <div class="row" >
-              <div class="btn-group" id = "firstD">
+              <div class="dropdown" id = "firstD">
                 <button type="button" class="btn btn-default dropdown-toggle pull-left"  href="#left-panel" data-toggle="dropdown" id = "secondDrop">
                   View Tree Canopy Statistics by Grid Cell <span class="caret"></span>
                 </button>
@@ -91,7 +98,7 @@
         <div class="container1">
           <div class = "subtitle3">View Grid Cells with Substantial Tree Canopy Risk </div>
           <div class="row">
-              <div class="btn-group">
+              <div class="dropdown">
                 <button type="button" class="btn btn-default dropdown-toggle pull-left" data-toggle="dropdown" id = "thirdDrop">
                   View Substanital Tree Tree Canopy Risk Scenarios <span class="caret"></span>
                 </button>
@@ -272,5 +279,6 @@
     <script src="js/leaflet.js"></script>
     <script src="js/main.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
   </body>
 </html>
