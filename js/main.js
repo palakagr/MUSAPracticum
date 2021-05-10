@@ -405,13 +405,13 @@ var pctChangeN = function(feature) {
   if(feature.properties.pctChange > -24 & feature.properties.pctChange < -11){ 
     return { fillColor: '#cccccc', weight: .5, opacity: 1, color: 'red'};
   }
-  if(feature.properties.pctChange> -11 & feature.properties.pctChange < 0){ 
+  if(feature.properties.pctChange> -11 & feature.properties.pctChange < -5){ 
     return { fillColor: '#969696', weight: .5, opacity: 1, color: 'red'};
   }
-  if(feature.properties.pctChange > 0 & feature.properties.pctChange < 8){ 
+  if(feature.properties.pctChange > -5 & feature.properties.pctChange < 0){ 
     return { fillColor: '#636363', weight: .5, opacity: 1, color: 'red'};
   }
-  if(feature.properties.pctChange > 8){
+  if(feature.properties.pctChange > 0){
     return { fillColor: '#252525', weight: .5, opacity: 1, color: 'red'};
     }
 };
